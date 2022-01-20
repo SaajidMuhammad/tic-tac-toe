@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./Board.css"
 
 import Box from '../Box/Box'
@@ -9,7 +9,15 @@ const boxId = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
 
 export default function Board() {
 
+
+
+
+
+
+
   const [nowClick, setNowClick] = useState("P1")
+
+
 
   const [boxInfo, setBoxInfo] = useState([
     {
@@ -88,6 +96,48 @@ export default function Board() {
     setBoxInfo(boxInfoVar)
 
   })
+
+
+  // Detect Winner
+  useEffect(() => {
+
+    if (((boxInfo[0].isClicked && boxInfo[0].clickedBy) === (boxInfo[1].isClicked && boxInfo[1].clickedBy)) && (boxInfo[1].clickedBy === (boxInfo[2].isClicked && boxInfo[2].clickedBy))) {
+      // Row 1 
+
+      console.log("Winner detected");
+    } else if (((boxInfo[3].isClicked && boxInfo[3].clickedBy) === (boxInfo[4].isClicked && boxInfo[4].clickedBy)) && (boxInfo[4].clickedBy === (boxInfo[5].isClicked && boxInfo[5].clickedBy))) {
+      // Row 2 
+
+      console.log("Winner detected");
+    } else if (((boxInfo[6].isClicked && boxInfo[6].clickedBy) === (boxInfo[7].isClicked && boxInfo[7].clickedBy)) && (boxInfo[7].clickedBy === (boxInfo[8].isClicked && boxInfo[8].clickedBy))) {
+      // Row 3
+
+      console.log("Winner detected");
+    } else if (((boxInfo[0].isClicked && boxInfo[0].clickedBy) === (boxInfo[3].isClicked && boxInfo[3].clickedBy)) && (boxInfo[3].clickedBy === (boxInfo[6].isClicked && boxInfo[6].clickedBy))) {
+      // cloumn 1
+
+      console.log("Winner detected");
+    } else if (((boxInfo[1].isClicked && boxInfo[1].clickedBy) === (boxInfo[4].isClicked && boxInfo[4].clickedBy)) && (boxInfo[4].clickedBy === (boxInfo[7].isClicked && boxInfo[7].clickedBy))) {
+      // cloumn 2
+
+      console.log("Winner detected");
+    } else if (((boxInfo[2].isClicked && boxInfo[2].clickedBy) === (boxInfo[5].isClicked && boxInfo[5].clickedBy)) && (boxInfo[5].clickedBy === (boxInfo[8].isClicked && boxInfo[8].clickedBy))) {
+      // cloumn 3
+
+      console.log("Winner detected");
+    } else if (((boxInfo[0].isClicked && boxInfo[0].clickedBy) === (boxInfo[4].isClicked && boxInfo[4].clickedBy)) && (boxInfo[4].clickedBy === (boxInfo[8].isClicked && boxInfo[8].clickedBy))) {
+      // X Left top to right bottom
+
+      console.log("Winner detected");
+    } else if (((boxInfo[2].isClicked && boxInfo[2].clickedBy) === (boxInfo[4].isClicked && boxInfo[4].clickedBy)) && (boxInfo[4].clickedBy === (boxInfo[6].isClicked && boxInfo[6].clickedBy))) {
+      // X Right top to left bottom
+
+      console.log("Winner detected");
+    } else {
+      console.log("no winenr");
+    }
+  }, [nowClick])
+
 
   return (
     <div className='gameWrapper'>
