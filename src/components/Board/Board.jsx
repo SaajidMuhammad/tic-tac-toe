@@ -11,7 +11,7 @@ export default function Board() {
 
     {boxId.map((bId, i) => {
       return (
-        <Box />
+        <Box key={i} bId={bId} />
       )
 
     })}
