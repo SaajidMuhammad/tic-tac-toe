@@ -1,10 +1,27 @@
+.mainHeader {
+  font-size: 36px;
+  margin-top: 10px;
+  cursor: default;
+}
+
+.gameWrapper {
+  text-align: center;
+}
 .boardWrapper {
   width: 300px;
   height: 300px;
-  margin: 10vh auto;
+  margin: 10vh auto 0;
   -webkit-box-shadow: 1px 1px 7px 4px rgba(0, 0, 0, 0.66);
   box-shadow: 1px 1px 7px 4px rgba(0, 0, 0, 0.66);
 
   display: flex;
   flex-wrap: wrap;
+}
+
+.buttonWrapper {
+  width: 300px;
+  margin: 2vh auto 5vh;
+  -webkit-box-shadow: 1px 1px 7px 4px rgba(0, 0, 0, 0.66);
+  box-shadow: 1px 1px 7px 4px rgba(0, 0, 0, 0.66);
+  padding: 20px 0;
 }

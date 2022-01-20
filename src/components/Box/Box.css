@@ -4,4 +4,12 @@
   -webkit-box-shadow: 0px 0px 0px 1px #000000;
   box-shadow: 0px 0px 0px 1px #000000;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.boxIcon {
+  align-self: center;
+  font-size: 65px;
+  font-weight: bold;
 }
