@@ -13,10 +13,10 @@ export default function Points() {
     return (
       <div>
         <div>
-          <h3>{localStorage.getItem("TTT-Player1")} : 20 Points</h3>
+          <h3>{localStorage.getItem("TTT-Player1")} : {localStorage.getItem("TTT-P1Points")} Points</h3>
         </div>
         <div>
-          <h3>{localStorage.getItem("TTT-Player2")} : 20 Points</h3>
+          <h3>{localStorage.getItem("TTT-Player2")} : {localStorage.getItem("TTT-P2Points")} Points</h3>
         </div>
 
         <button style={{ background: "blue" }} onClick={() => {
